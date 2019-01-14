@@ -41,11 +41,13 @@ def publishGocVersion() {
 }
 
 def uploadToBintray(pkg, fileName) {
-    sh "jfrog bt u $gocWorkspace/$fileName $subject/$repo/$pkg/$VERSION /$VERSION/$pkg/ --user=$USER_NAME --key=$KEY"
+    sh """#!/bin/bash
+        jfrog bt u $gocWorkspace/$repo/$fileName $subject/$repo/$pkg/$VERSION /$VERSION/$pkg/ --user=$USER_NAME --key=$KEY
+    """
 }
 
 def buildAndUpload(goos, goarch, pkg, fileExtension) {
-    sh "env GOOS=$goos GOARCH=$goarch GO111MODULE=on go build"
+    sh "GOOS=$goos GOARCH=$goarch GO111MODULE=on go build"
     def fileName = "goc$fileExtension"
     uploadToBintray(pkg, fileName)
     sh "rm $fileName"
