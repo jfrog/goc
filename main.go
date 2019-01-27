@@ -41,9 +41,9 @@ func goCmd(c *cli.Context) error {
 		url = "https://gocenter.jfrog.io/gocenter/"
 	}
 
-	targetRepo := os.Getenv("GOC_GO_CENTER_REPO")
-	if targetRepo == "" {
-		targetRepo = "gocenter-virtual"
+	repo := os.Getenv("GOC_GO_CENTER_REPO")
+	if repo == "" {
+		repo = "gocenter-virtual"
 	}
-	return executers.Execute(strings.Join(args, " "), targetRepo, url)
+	return executers.Execute(strings.Join(args, " "), url, repo)
 }
