@@ -12,7 +12,7 @@ goc get
 
 # How it Works
 The ```goc``` utility automatically assigns *GOPROXY* to [GoCenter](https://gocenter.jfrog.com/stats), so that Go dependencies will be primarily resolved from that repository. Unlike the ```go``` client alone, however, any packages not found in [GoCenter](https://gocenter.jfrog.com/stats) will be resolved by ```goc``` from the source control. This is the default action until [GoCenter](https://gocenter.jfrog.com/stats) grows to serve all the dependencies.
-![](docs/goc-flow-chart.png "")
+![](docs/goc-flow.png "")
 
 # Download and Installation
 You can download the executable directly using the following curl command
