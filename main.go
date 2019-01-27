@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/codegangsta/cli"
-	"github.com/jfrog/gocmd"
+	"github.com/jfrog/gocmd/executers"
 	"os"
 	"strings"
 )
@@ -12,7 +12,7 @@ func main() {
 	app := cli.NewApp()
 	app.Name = "goc"
 	app.Usage = "Runs Go using GoCenter"
-	app.Version = "0.1.0"
+	app.Version = "1.0.0"
 	args := os.Args
 	app.Action = func(c *cli.Context) error {
 		return goCmd(c)
@@ -35,5 +35,15 @@ func goCmd(c *cli.Context) error {
 		args = []string{""}
 	}
 
-	return gocmd.ExecuteGoCentral(strings.Join(args, " "))
+	// Check env first.
+	url := os.Getenv("GOC_GO_CENTER_URL")
+	if url == "" {
+		url = "https://gocenter.jfrog.io/gocenter/"
+	}
+
+	targetRepo := os.Getenv("GOC_GO_CENTER_REPO")
+	if targetRepo == "" {
+		targetRepo = "gocenter-virtual"
+	}
+	return executers.Execute(strings.Join(args, " "), targetRepo, url)
 }
