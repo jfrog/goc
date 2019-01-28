@@ -12,7 +12,7 @@ func main() {
 	app := cli.NewApp()
 	app.Name = "goc"
 	app.Usage = "Runs Go using GoCenter"
-	app.Version = "1.0.1"
+	app.Version = "1.0.2"
 	args := os.Args
 	app.Action = func(c *cli.Context) error {
 		return goCmd(c)

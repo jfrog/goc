@@ -29,10 +29,8 @@ github.com/google/go-cmp v0.2.0/go.mod h1:oXzfMopK8JAjlY9xF4vHSVASa0yLyX7SntLO5a
 github.com/hashicorp/hcl v1.0.0/go.mod h1:E5yfLk+7swimpb2L/Alb/PJmXilQ/rhwaUYs4T20WEQ=
 github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99 h1:BQSFePA1RWJOlocH6Fxy8MmwDt+yVQYULKfN0RoTN8A=
 github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99/go.mod h1:1lJo3i6rXxKeerYnT8Nvf0QmHCRC1n8sfWVwXF2Frvo=
-github.com/jfrog/gocmd v0.1.1 h1:oJ4KNIVkV/lmHkJGOExeRxKmE6au7RsUSkTcmHVJjA0=
-github.com/jfrog/gocmd v0.1.1/go.mod h1:1+Lu/wg1505QvOCGv4GIoD4r73TW0SWt2DnjlMKbbcM=
-github.com/jfrog/gocmd v0.1.2 h1:6UR7P5+9smYJvxzHsomuvR9cCssOPfFNpnpqsF3oOR4=
-github.com/jfrog/gocmd v0.1.2/go.mod h1:1+Lu/wg1505QvOCGv4GIoD4r73TW0SWt2DnjlMKbbcM=
+github.com/jfrog/gocmd v0.1.3 h1:+DkZYBmAQaMW2Qfw04JETiWc7M4VlZ5OLmP/nhoyMps=
+github.com/jfrog/gocmd v0.1.3/go.mod h1:1+Lu/wg1505QvOCGv4GIoD4r73TW0SWt2DnjlMKbbcM=
 github.com/jfrog/gofrog v1.0.2/go.mod h1:4Caxvc8B2K1A798G1Ne+SsUICRPPre4GpgcFqj+EXJ8=
 github.com/jfrog/gofrog v1.0.3 h1:npsZ64nBjphtv527ihFyV+lMqzNNgjb1KLl6q4UAhj0=
 github.com/jfrog/gofrog v1.0.3/go.mod h1:4Caxvc8B2K1A798G1Ne+SsUICRPPre4GpgcFqj+EXJ8=
