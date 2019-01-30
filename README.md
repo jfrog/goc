@@ -20,6 +20,7 @@ You can download ```goc``` as follows.
 ```
 curl -fL https://getgoc.gocenter.io | sh
 ```
+* This curl command will download ```goc``` to the current working directory. To run goc, type `./goc` or put the executable in your executable path.
 ## Directly from Bintray
 Download the executable from [Bintray](https://bintray.com/jfrog/goc).
 
