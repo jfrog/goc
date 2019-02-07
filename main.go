@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/codegangsta/cli"
-	"github.com/jfrog/gocmd/executers"
+	"github.com/jfrog/gocmd"
 	"os"
 	"strings"
 )
@@ -31,15 +31,10 @@ func main() {
 
 func goCmd(c *cli.Context) error {
 	args := c.Args()
-	if len(args) == 0 {
-		args = []string{""}
-	}
-
 	// Check env first.
 	url := os.Getenv("GOC_GO_CENTER_URL")
 	if url == "" {
 		url = "https://gocenter.io/"
 	}
-
-	return executers.Execute(strings.Join(args, " "), url, "")
+	return GoCmd.RunWithFallback(args, url)
 }
