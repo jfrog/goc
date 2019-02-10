@@ -12,7 +12,7 @@ func main() {
 	app := cli.NewApp()
 	app.Name = "goc"
 	app.Usage = "Runs Go using GoCenter"
-	app.Version = "1.0.2"
+	app.Version = "1.0.3"
 	args := os.Args
 	app.Action = func(c *cli.Context) error {
 		return goCmd(c)
@@ -36,5 +36,5 @@ func goCmd(c *cli.Context) error {
 	if url == "" {
 		url = "https://gocenter.io/"
 	}
-	return GoCmd.RunWithFallback(args, url)
+	return gocmd.RunWithFallback(args, url)
 }
