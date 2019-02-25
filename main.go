@@ -2,10 +2,13 @@ package main
 
 import (
 	"fmt"
-	"github.com/codegangsta/cli"
-	"github.com/jfrog/gocmd"
+	"io/ioutil"
 	"os"
 	"strings"
+
+	"github.com/codegangsta/cli"
+	"github.com/jfrog/gocmd"
+	"github.com/jfrog/jfrog-client-go/utils/log"
 )
 
 func main() {
@@ -35,6 +38,10 @@ func goCmd(c *cli.Context) error {
 	url := os.Getenv("GOC_GO_CENTER_URL")
 	if url == "" {
 		url = "https://gocenter.io/"
+	}
+	if os.Getenv("GOC_QUIET") != "" {
+		log.Logger.SetOutputWriter(ioutil.Discard)
+		log.Logger.SetStderrWriter(ioutil.Discard)
 	}
 	return gocmd.RunWithFallback(args, url)
 }
