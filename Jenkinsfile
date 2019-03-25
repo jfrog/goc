@@ -47,7 +47,7 @@ def uploadToBintray(pkg, fileName) {
 }
 
 def buildAndUpload(goos, goarch, pkg, fileExtension) {
-    sh "GOOS=$goos GOARCH=$goarch GO111MODULE=on go build"
+    sh "GOOS=$goos GOARCH=$goarch GO111MODULE=on GOPROXY=https://gocenter.io CGO_ENABLED=0 go build"
     def fileName = "goc$fileExtension"
     uploadToBintray(pkg, fileName)
     sh "rm $fileName"
